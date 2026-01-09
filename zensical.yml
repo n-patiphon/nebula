@@ -4,7 +4,7 @@ site_name: Nebula
 site_description: Nebula Multi-Sensor Driver Framework
 
 repo_url: https://github.com/tier4/nebula
-docs_dir: docs
+docs_dir: docs_generated
 copyright: Copyright © 2023 TIER IV, Inc.
 
 ### Theme settings ###

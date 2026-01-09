@@ -1,4 +1,1 @@
-| Name         | Type   | Description         | Default   | Range                        |
-|--------------|--------|---------------------|-----------|------------------------------|
-| sensor_model | string | Sensor model.       |           | Helios, Bpearl               |
-| return_mode  | string | Sensor return mode. |           | Dual, Strongest, Last, First |
+{{ json_to_markdown("src/nebula_robosense/nebula_robosense/schema/lidar_robosense.json", ["definitions"], True) }}

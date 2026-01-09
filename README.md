@@ -66,8 +66,8 @@ _(optional)_ To build and serve the documentation, ensure Doxygen is installed, 
 ```shell
 cd src
 pip3 install -r docs/requirements.txt
-python3 scripts/generate_parameter_tables.py
-python3 scripts/generate_api_reference.py
+python3 scripts/generate_parameter_tables.py --output-dir docs_generated
+python3 scripts/generate_api_reference.py --output-dir docs_generated
 zensical serve
 ```
 

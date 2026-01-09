@@ -30,8 +30,8 @@ jobs:
       - run: |
           sudo apt update && sudo apt install -y doxygen && \
           pip install -r docs/requirements.txt
-      - run: python3 scripts/generate_parameter_tables.py
-      - run: python3 scripts/generate_api_reference.py
+      - run: python3 scripts/generate_parameter_tables.py --output-dir docs_generated
+      - run: python3 scripts/generate_api_reference.py --output-dir docs_generated
       - run: zensical build --site-dir _site
       - run: touch _site/.nojekyll
       - run: |

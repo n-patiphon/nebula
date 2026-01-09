@@ -1,6 +1,1 @@
-| Name             | Type    | Description                                 | Default                                                                                        | Range                                          |
-|------------------|---------|---------------------------------------------|------------------------------------------------------------------------------------------------|------------------------------------------------|
-| sensor_model     | string  | Sensor model.                               |                                                                                                | VLP16, VLP32, VLS128                           |
-| calibration_file | string  | Sensor calibration file.                    | $(find-pkg-share nebula_decoders)/<wbr>calibration/<wbr>velodyne/<wbr>$(var sensor_model).yaml | N/A                                            |
-| return_mode      | string  | Sensor return mode.                         |                                                                                                | SingleStrongest, SingleLast, Dual, SingleFirst |
-| rotation_speed   | integer | Motor RPM, the sensor's internal spin rate. | 600                                                                                            | ≥ 300<br/>≤ 1200                               |
+{{ json_to_markdown("src/nebula_velodyne/nebula_velodyne/schema/lidar_velodyne.json", ["definitions"], True) }}

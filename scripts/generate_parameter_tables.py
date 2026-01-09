@@ -3,10 +3,12 @@
 
 from __future__ import annotations
 
+import argparse
 import ast
 import json
 import os
 import re
+import shutil
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -153,9 +155,30 @@ def replace_macros(markdown: str) -> str:
     return MACRO_PATTERN.sub(replacer, markdown)
 
 
+def build_argument_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-dir", default="docs", help="Source docs directory.")
+    parser.add_argument(
+        "--output-dir",
+        default="docs_generated",
+        help="Output directory containing expanded markdown.",
+    )
+    return parser
+
+
 def main() -> None:
-    docs_root = Path("docs")
-    markdown_files = docs_root.rglob("*.md")
+    parser = build_argument_parser()
+    args = parser.parse_args()
+
+    source_root = Path(args.source_dir)
+    output_root = Path(args.output_dir)
+
+    if output_root.exists():
+        shutil.rmtree(output_root)
+
+    shutil.copytree(source_root, output_root)
+
+    markdown_files = output_root.rglob("*.md")
 
     for file_path in markdown_files:
         content = file_path.read_text(encoding="utf-8")
