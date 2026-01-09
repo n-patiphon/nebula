@@ -20,6 +20,16 @@ Nebula works with ROS 2 and is the recommended sensor driver for the [Autoware](
 - [Installation](installation.md)
 - [Launching with ROS 2](usage.md)
 
+## Building documentation locally
+
+To build and serve the documentation locally, run the following commands in your workspace:
+
+```shell
+cd src
+pip3 install -r docs/requirements.txt
+zensical docs
+```
+
 ## Nebula architecture
 
 - [Design](design.md)
