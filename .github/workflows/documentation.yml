@@ -32,7 +32,10 @@ jobs:
           pip install -r docs/requirements.txt
       - run: python3 scripts/generate_parameter_tables.py --output-dir docs_generated
       - run: python3 scripts/generate_api_reference.py --output-dir docs_generated
-      - run: zensical build --site-dir _site
+      - run: zensical build -f zensical.yml
+      - run: |
+          rm -rf _site
+          mv site _site
       - run: touch _site/.nojekyll
       - run: |
           chmod -c -R +rX "_site/" | while read line; do

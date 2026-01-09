@@ -68,7 +68,7 @@ cd src
 pip3 install -r docs/requirements.txt
 python3 scripts/generate_parameter_tables.py --output-dir docs_generated
 python3 scripts/generate_api_reference.py --output-dir docs_generated
-zensical serve
+zensical serve -f zensical.yml
 ```
 
 To launch Nebula as a ROS 2 node with default parameters for your sensor model:
