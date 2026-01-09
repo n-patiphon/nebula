@@ -1,0 +1,40 @@
+[project]
+site_name = "Nebula"
+site_description = "Nebula Multi-Sensor Driver Framework"
+repo_url = "https://github.com/tier4/nebula"
+docs_dir = "docs"
+site_dir = "_site"
+use_directory_urls = true
+copyright = "Copyright &copy; 2023 TIER IV, Inc."
+plugins = [
+  "search",
+]
+
+markdown_extensions = [
+  "admonition",
+  "pymdownx.details",
+  "pymdownx.highlight",
+  "pymdownx.superfences",
+]
+
+[project.theme]
+language = "en"
+features = [
+  "navigation.tabs",
+  "navigation.indexes",
+  "navigation.top",
+  "search.suggest",
+  "search.highlight",
+]
+
+[[project.theme.palette]]
+scheme = "default"
+primary = "white"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+primary = "grey"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
