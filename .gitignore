@@ -29,6 +29,7 @@ __pycache__
 # Ignore generated docs
 *.dox
 .mkdoxy/
+.doxygen/
 *.wikidoc
 site/
 # eclipse stuff

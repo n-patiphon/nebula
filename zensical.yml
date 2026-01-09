@@ -5,7 +5,7 @@ site_description: Nebula Multi-Sensor Driver Framework
 
 repo_url: https://github.com/tier4/nebula
 docs_dir: docs
-copyright: Copyright &copy; 2023 TIER IV, Inc.
+copyright: Copyright © 2023 TIER IV, Inc.
 
 ### Theme settings ###
 theme:
@@ -182,96 +182,6 @@ nav:
           - Variables: continental/variables.md
           - Macros: continental/macros.md
           - Files: continental/files.md
-
-### Extra Settings ###
-plugins:
-  - macros:
-      module_name: mkdocs_macros
-      render_by_default: false
-      force_render_paths: |
-        *
-        !*_source.md
-        !class*.md
-  - mkdoxy:
-      projects:
-        core:
-          src-dirs: >
-            src/nebula_core/nebula_core_common/include
-            src/nebula_core/nebula_core_decoders/include
-            src/nebula_core/nebula_core_hw_interfaces/include
-            src/nebula_core/nebula_core_ros/include
-          full-doc: true
-          doxy-cfg:
-            FILE_PATTERNS: "*.hpp *.h"
-            RECURSIVE: true
-            EXTRACT_ALL: true
-            INLINE_SOURCES: true
-            ENABLE_PREPROCESSING: true
-            MACRO_EXPANSION: true
-        hesai:
-          src-dirs: >
-            src/nebula_hesai/nebula_hesai_common/include
-            src/nebula_hesai/nebula_hesai_decoders/include
-            src/nebula_hesai/nebula_hesai_hw_interfaces/include
-            src/nebula_hesai/nebula_hesai/include
-          full-doc: true
-          doxy-cfg:
-            FILE_PATTERNS: "*.hpp *.h"
-            RECURSIVE: true
-            EXTRACT_ALL: true
-            INLINE_SOURCES: true
-            ENABLE_PREPROCESSING: true
-            MACRO_EXPANSION: true
-        velodyne:
-          src-dirs: >
-            src/nebula_velodyne/nebula_velodyne_common/include
-            src/nebula_velodyne/nebula_velodyne_decoders/include
-            src/nebula_velodyne/nebula_velodyne_hw_interfaces/include
-            src/nebula_velodyne/nebula_velodyne/include
-          full-doc: true
-          doxy-cfg:
-            FILE_PATTERNS: "*.hpp *.h"
-            RECURSIVE: true
-            EXTRACT_ALL: true
-            INLINE_SOURCES: true
-            ENABLE_PREPROCESSING: true
-            MACRO_EXPANSION: true
-        robosense:
-          src-dirs: >
-            src/nebula_robosense/nebula_robosense_common/include
-            src/nebula_robosense/nebula_robosense_decoders/include
-            src/nebula_robosense/nebula_robosense_hw_interfaces/include
-            src/nebula_robosense/nebula_robosense/include
-          full-doc: true
-          doxy-cfg:
-            FILE_PATTERNS: "*.hpp *.h"
-            RECURSIVE: true
-            EXTRACT_ALL: true
-            INLINE_SOURCES: true
-            ENABLE_PREPROCESSING: true
-            MACRO_EXPANSION: true
-        continental:
-          src-dirs: >
-            src/nebula_continental/nebula_continental_common/include
-            src/nebula_continental/nebula_continental_decoders/include
-            src/nebula_continental/nebula_continental_hw_interfaces/include
-            src/nebula_continental/nebula_continental/include
-          full-doc: true
-          doxy-cfg:
-            FILE_PATTERNS: "*.hpp *.h"
-            RECURSIVE: true
-            EXTRACT_ALL: true
-            INLINE_SOURCES: true
-            ENABLE_PREPROCESSING: true
-            MACRO_EXPANSION: true
-
-      save-api: .mkdoxy
-      full-doc: true
-      debug: false
-      ignore-errors: false
-
-  - search:
-      lang: en
 
 markdown_extensions:
   - admonition

@@ -29,13 +29,10 @@ jobs:
           python-version: 3.x
       - run: |
           sudo apt update && sudo apt install -y doxygen && \
-          pip install mkdocs \
-          mkdocs-material \
-          Jinja2 \
-          ruamel.yaml && \
-          pip install git+https://github.com/JakubAndrysek/mkdoxy && \
           pip install -r docs/requirements.txt
-      - run: mkdocs build --site-dir _site
+      - run: python3 scripts/generate_parameter_tables.py
+      - run: python3 scripts/generate_api_reference.py
+      - run: zensical build --site-dir _site
       - run: touch _site/.nojekyll
       - run: |
           chmod -c -R +rX "_site/" | while read line; do

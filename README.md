@@ -61,12 +61,14 @@ colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_E
 To build with support for [Agnocast](https://github.com/tier4/agnocast), TIER IV's zero-copy
 middleware, refer to the Agnocast section below.
 
-_(optional)_ To build and serve the documentation, run the following commands in your workspace:
+_(optional)_ To build and serve the documentation, ensure Doxygen is installed, then run the following commands in your workspace:
 
 ```shell
 cd src
 pip3 install -r docs/requirements.txt
-mkdocs serve
+python3 scripts/generate_parameter_tables.py
+python3 scripts/generate_api_reference.py
+zensical serve
 ```
 
 To launch Nebula as a ROS 2 node with default parameters for your sensor model:
