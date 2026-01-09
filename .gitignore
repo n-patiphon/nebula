@@ -29,6 +29,7 @@ __pycache__
 # Ignore generated docs
 *.dox
 .mkdoxy/
+.zensical/
 *.wikidoc
 site/
 # eclipse stuff

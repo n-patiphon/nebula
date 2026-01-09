@@ -64,9 +64,16 @@ middleware, refer to the Agnocast section below.
 _(optional)_ To build and serve the documentation, run the following commands in your workspace:
 
 ```shell
-cd src
+# In nebula repo
+python3 -m venv .venv-mkdocs
+. .venv-mkdocs/bin/activate
 pip3 install -r docs/requirements.txt
-mkdocs serve
+python3 scripts/build_zensical_docs_source.py --skip-api
+deactivate
+python3 -m venv .venv-zensical
+. .venv-zensical/bin/activate
+pip3 install zensical==0.0.15
+zensical serve -f .zensical/mkdocs.yml
 ```
 
 To launch Nebula as a ROS 2 node with default parameters for your sensor model:

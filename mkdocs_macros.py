@@ -123,6 +123,23 @@ def format_json(json_data):
     return markdown_table
 
 
+def json_to_markdown_impl(
+    json_schema_file_path,
+    json_path=["definitions", 0, "properties"],
+    include_refs=True,
+):
+    with open(json_schema_file_path) as f:
+        data = json.load(f)
+
+    params = get_json_path(data, json_path)
+    param_info = extract_parameter_info(
+        params,
+        file_directory=os.path.split(json_schema_file_path)[0],
+        include_refs=include_refs,
+    )
+    return format_json(param_info)
+
+
 def define_env(env):
     @env.macro
     def json_to_markdown(
@@ -130,13 +147,4 @@ def define_env(env):
         json_path=["definitions", 0, "properties"],
         include_refs=True,
     ):
-        with open(json_schema_file_path) as f:
-            data = json.load(f)
-
-        params = get_json_path(data, json_path)
-        param_info = extract_parameter_info(
-            params,
-            file_directory=os.path.split(json_schema_file_path)[0],
-            include_refs=include_refs,
-        )
-        return format_json(param_info)
+        return json_to_markdown_impl(json_schema_file_path, json_path, include_refs)
