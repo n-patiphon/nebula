@@ -21,6 +21,16 @@ Before submitting your contributions, please take a moment to review our guideli
 - Set up your IDE to use Clang-Tidy with the `.clang-tidy` configuration found in the repository root
 - Documentation can be found at [tier4.github.io/nebula](https://tier4.github.io/nebula)
 
+### Building documentation locally
+
+To build and serve the documentation locally, run the following commands in your workspace:
+
+```shell
+cd src
+pip3 install -r docs/requirements.txt
+zensical docs
+```
+
 ## How to Contribute
 
 ### About large contributions
