@@ -66,7 +66,7 @@ _(optional)_ To build and serve the documentation, run the following commands in
 ```shell
 cd src
 pip3 install -r docs/requirements.txt
-zensical docs
+zensical serve
 ```
 
 To launch Nebula as a ROS 2 node with default parameters for your sensor model:

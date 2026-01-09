@@ -28,7 +28,7 @@ To build and serve the documentation locally, run the following commands in your
 ```shell
 cd src
 pip3 install -r docs/requirements.txt
-zensical docs
+zensical serve
 ```
 
 ## How to Contribute
